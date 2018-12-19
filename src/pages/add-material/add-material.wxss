@@ -1,0 +1,26 @@
+/* pages/add-material/add-material.wxss */
+.add-material-container {
+  width: 60%;
+  margin: 0 auto 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.material-tab {
+  width: 90rpx;
+  font-size: 34rpx;
+  text-align: center;
+  border-bottom: 4rpx solid transparent;
+}
+
+.material-tab-selected {
+  color: #1296db;
+  border-bottom: 4rpx solid #1296db;
+}
+
+@import '../../common.wxss';
+
+.material-swiper {
+  height: 2000rpx;
+}

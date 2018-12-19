@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="material-vegetables">
+    <view class="material-category">
+      <text>蔬菜</text>
+    </view>
+    <view class="materials-container">
+      <view wx:for="{{materials.vegetables}}" wx:key="{{item.icon}}" class="materials-each">
+        <view><image class="material-icon" src="../../assets/materials/{{item.icon}}"></image></view>
+        <view><text class="material-name">{{item.name}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="material-meats">
+    <view class="material-category">
+      <text>肉类</text>
+    </view>
+    <view class="materials-container">
+      <view wx:for="{{materials.meats}}" wx:key="{{item.icon}}" class="materials-each">
+        <view><image class="material-icon" src="../../assets/materials/{{item.icon}}"></image></view>
+        <view><text class="material-name">{{item.name}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="material-fruits">
+    <view class="material-category">
+      <text>水果</text>
+    </view>
+    <view class="materials-container">
+      <view wx:for="{{materials.fruits}}" wx:key="{{item.icon}}" class="materials-each">
+        <view><image class="material-icon" src="../../assets/materials/{{item.icon}}"></image></view>
+        <view><text class="material-name">{{item.name}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="material-others">
+    <view class="material-category">
+      <text>其他</text>
+    </view>
+    <view class="materials-container">
+      <view wx:for="{{materials.others}}" wx:key="{{item.icon}}" class="materials-each">
+        <view><image mode="aspectFill" class="material-icon" src="../../assets/materials/{{item.icon}}"></image></view>
+        <view><text class="material-name">{{item.name}}</text></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<navigator open-type='navigateTo' url="../add-material/add-material">
+  <view class="material-add">
+    <text>+</text>
+  </view>
+</navigator>
+

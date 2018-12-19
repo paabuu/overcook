@@ -1,7 +1,7 @@
 module.exports = {
     vegetables: [
         { name: "西红柿", icon: "tomato.svg" },
-        { name: "洋葱", icon: "union.svg" },
+        { name: "洋葱", icon: "onion.svg" },
         { name: "青椒", icon: "green_pepper.svg" },
         { name: "茄子", icon: "eggplant.svg" },
         { name: "黄瓜", icon: "cucumber.svg" },
@@ -41,7 +41,8 @@ module.exports = {
         { name: "花生", icon: "huasheng.svg" },
         { name: "生菜", icon: "shengcai.svg" },
         { name: "彩椒", icon: "caijiao.svg" },
-        { name: "秋葵", icon: "qiukui.svg" }
+        { name: "秋葵", icon: "qiukui.svg" },
+        { name: "海带", icon: "haidai.svg" }
     ],
     meats: [
         { name: "猪肉", icon: "zhurou.svg" },
@@ -56,19 +57,15 @@ module.exports = {
         { name: "虾", icon: "xia.svg" },
         { name: "鸭肉", icon: "ya.svg" },
         { name: "螃蟹", icon: "pangxie.svg" },
-        { name: "海带", icon: "haidai.svg" },
     ],
     fruits: [
         { name: "苹果", icon: "pingguo.svg" },
-        { name: "梨", icon: "li.svg" },
+        { name: "梨", icon: "lizi.svg" },
         { name: "葡萄", icon: "putao.svg" },
         { name: "柚子", icon: "youzi.svg" },
         { name: "桃子", icon: "taozi.svg" },
         { name: "西瓜", icon: "xigua.svg" },
         { name: "香瓜", icon: "xianggua.svg" },
-        { name: "桃子", icon: "taozi.svg" },
-        { name: "荔枝", icon: "lizhi.svg" },
-        { name: "甘蔗", icon: "lizhi.svg" },
         { name: "荔枝", icon: "lizhi.svg" },
         { name: "柿子", icon: "shizi.svg" },
         { name: "柠檬", icon: "ningmeng.svg" },

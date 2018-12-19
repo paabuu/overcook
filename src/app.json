@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/add-material/add-material"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "我的冰箱",
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/icons/bingxiang.png",
+        "selectedIconPath": "assets/icons/bingxiang_selected.png"
+      },
+      {
+        "text": "购物清单",
+        "pagePath": "pages/logs/logs",
+        "iconPath": "assets/icons/shopping_list.png",
+        "selectedIconPath": "assets/icons/shopping_list_selected.png"
+      },
+      {
+        "text": "菜谱",
+        "pagePath": "pages/logs/logs",
+        "iconPath": "assets/icons/cookbook.png",
+        "selectedIconPath": "assets/icons/cookbook_selected.png"
+      }
+    ],
+    "color": "#aaa",
+    "selectedColor": "#1296db",
+    "borderStyle": "white"
+  }
+}

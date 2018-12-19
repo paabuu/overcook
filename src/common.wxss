@@ -1,0 +1,42 @@
+.materials-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.materials-each {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  margin-bottom: 30rpx;
+}
+
+.material-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 1px solid skyblue;
+  background-color:skyblue;
+}
+
+.material-name {
+  color: #333;
+  font-size: 26rpx;
+}
+
+.material-add {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 78rpx;
+  background-color: #1296db;
+  font-size: 60rpx;
+  color: #fff;
+  box-shadow: 0px 1rpx 4px #1296db;
+}

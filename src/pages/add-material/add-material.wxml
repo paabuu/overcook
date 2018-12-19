@@ -1,0 +1,42 @@
+<!--pages/add-material/add-material.wxml-->
+<view class="add-material-container">
+  <view 
+    class="material-tab {{ selectedType === 'vegetables' ? 'material-tab-selected' : '' }}"
+    bindtap='handleChangeType'
+    id="vegetables"
+  >
+    <text>蔬菜</text>
+  </view>
+  <view 
+    class="material-tab {{ selectedType === 'meats' ? 'material-tab-selected' : '' }}"
+    bindtap='handleChangeType'
+    id="meats"
+  >
+    <text>肉类</text>
+  </view>
+  <view 
+    class="material-tab {{ selectedType === 'fruits' ? 'material-tab-selected' : '' }}"
+    bindtap='handleChangeType'
+    id="fruits"
+  >
+    <text>水果</text>
+  </view>
+  <view 
+    class="material-tab {{ selectedType === 'others' ? 'material-tab-selected' : '' }}"
+    bindtap='handleChangeType'
+    id="others"
+  >
+    <text>其他</text>
+  </view>
+</view>
+
+<swiper class="material-swiper" bindchange='handleChangeType'>
+  <swiper-item wx:for="{{types}}" wx:key="type" >
+    <view class="materials-container">
+      <view wx:for="{{materials[item]}}" wx:key="{{item.icon}}" class="materials-each">
+        <view><image class="material-icon" src="../../assets/materials/{{item.icon}}"></image></view>
+        <view><text class="material-name">{{item.name}}</text></view>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
