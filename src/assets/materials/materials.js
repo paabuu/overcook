@@ -42,7 +42,8 @@ module.exports = {
         { name: "生菜", icon: "shengcai.svg" },
         { name: "彩椒", icon: "caijiao.svg" },
         { name: "秋葵", icon: "qiukui.svg" },
-        { name: "海带", icon: "haidai.svg" }
+        { name: "海带", icon: "haidai.svg" },
+        { name: "其他", icon: "vegetables.svg" }
     ],
     meats: [
         { name: "猪肉", icon: "zhurou.svg" },
@@ -57,6 +58,7 @@ module.exports = {
         { name: "虾", icon: "xia.svg" },
         { name: "鸭肉", icon: "ya.svg" },
         { name: "螃蟹", icon: "pangxie.svg" },
+        { name: "其他", icon: "meats.svg" }
     ],
     fruits: [
         { name: "苹果", icon: "pingguo.svg" },
@@ -84,7 +86,7 @@ module.exports = {
         { name: "火龙果", icon: "huolongguo.svg" },
         { name: "樱桃", icon: "yingtao.svg" },
         { name: "牛油果", icon: "niuyouguo.svg" },
-
+        { name: "其他", icon: "fruits.svg" }
     ],
     others: [
         { name: "鸡蛋", icon: "jidan.svg" },
@@ -96,5 +98,9 @@ module.exports = {
         { name: "水饺", icon: "shuijiao.svg" },
         { name: "馒头", icon: "mantou.svg" },
         { name: "包子", icon: "baozi.svg" },
+        { name: "面包", icon: "mianbao.svg" },
+        { name: "油条", icon: "binggan.svg" },
+        { name: "饼干", icon: "youtiao.svg" },
+        { name: "其他", icon: "others.svg" }
     ]
 };

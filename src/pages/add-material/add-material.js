@@ -1,5 +1,25 @@
 // pages/add-material/add-material.js
-const materials = require('../../assets/materials/materials.js');
+const { formatDate } = require('../../utils/util.js');
+const types = [
+  {
+    name: "蔬菜",
+    value: "vegetables"
+  },
+  {
+    name: "肉类",
+    value: "meats"
+  },
+  {
+    name: "水果",
+    value: "fruits"
+  },
+  {
+    name: "其他",
+    value: "others"
+  }
+];
+
+const defaultShlefLife = formatDate(new Date(Date.now() + 3 * 24 * 60 * 60 * 1000));
 
 Page({
 
@@ -7,70 +27,50 @@ Page({
    * Page initial data
    */
   data: {
-    selectedType: "vegetables",
-    materials: materials,
-    types: ['vegetables', 'meats', 'fruits', 'others']
-  },
-
-  handleChangeType: function(e) {
-    const type = this.data.types[e.detail.current];
-    this.setData({
-      selectedType: type
-    });
+    name: '',
+    icon: '',
+    category: 'vegetables',
+    cost: '',
+    total: '',
+    remark: '',
+    shelfLife: defaultShlefLife,
+    types
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({
+      name: options.name,
+      icon: `/assets/materials/${options.icon}`,
+      category: options.category
+    });
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
+  bindDateChange: function(e) {
+    this.setData({
+      shelfLife: e.detail.value
+    });
   },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
+  bindInfoChange: function(e) {
+    const type = e.currentTarget.dataset.type;
+    this.setData({
+      [type]: e.detail.value
+    });
   },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+  bindConfirm: function() {
+    const materials = wx.getStorageSync('materials') || [];
+    const { name, icon, category, cost, total, remark, shelfLife } = this.data;
+    materials.push({name, icon, category, cost, total, remark, shelfLife, id: Date.now()});
+    wx.setStorage({
+      key: "materials",
+      data: materials,
+      success: function() {
+        wx.switchTab({
+          url: '/pages/index/index'
+        });
+      }
+    })
   }
 })

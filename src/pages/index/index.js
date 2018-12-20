@@ -11,18 +11,31 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     materials: {
-      vegetables: vegetables.slice(0, 7),
-      meats: meats.slice(0, 6),
-      fruits: fruits.slice(0, 7),
-      others: others.slice(0, 6)
-    }
-
+      vegetables: [],
+      meats: [],
+      fruits: [],
+      others: []
+    },
+    isEmpty: false
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  onShow: function() {
+    const materials = wx.getStorageSync("materials") || [];
+    const vegetables = materials.filter(m => m.category === 'vegetables');
+    const meats = materials.filter(m => m.category === 'meats');
+    const fruits = materials.filter(m => m.category === 'fruits');
+    const others = materials.filter(m => m.category === 'others');
+
+    const isEmpty = (vegetables.length + meats.length + fruits.length + others.length) === 0;
+    this.setData({
+      materials: {vegetables, meats, fruits, others},
+      isEmpty
+    });
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -53,7 +66,6 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
