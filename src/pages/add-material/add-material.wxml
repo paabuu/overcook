@@ -2,7 +2,7 @@
 <view class="add-material-container">
   <view class="add-material-header">
     <image src='{{icon}}'></image>
-    <text>新增食材</text>
+    <text>食材信息</text>
   </view>
   <view class="add-material-form">
     <label>名称:</label>

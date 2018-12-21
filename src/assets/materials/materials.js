@@ -99,8 +99,8 @@ module.exports = {
         { name: "馒头", icon: "mantou.svg" },
         { name: "包子", icon: "baozi.svg" },
         { name: "面包", icon: "mianbao.svg" },
-        { name: "油条", icon: "binggan.svg" },
-        { name: "饼干", icon: "youtiao.svg" },
+        { name: "饼干", icon: "binggan.svg" },
+        { name: "油条", icon: "youtiao.svg" },
         { name: "其他", icon: "others.svg" }
     ]
 };

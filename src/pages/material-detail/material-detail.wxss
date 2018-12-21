@@ -1,0 +1,73 @@
+.add-material-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .add-material-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #1296db;
+    margin-bottom: 20rpx;
+    font-weight: bold;
+    font-size: 14pt;
+    padding-bottom: 5rpx;
+  }
+  
+  .add-material-header image {
+    width: 70rpx;
+    height: 70rpx;
+    margin-right: 15rpx;
+  }
+  
+  .add-material-form {
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .add-material-form .slider {
+    width: 75%;
+  }
+
+  .add-material-form .slider slider {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .add-material-form>label {
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .add-material-form input, .add-material-form picker {
+    width: 75%;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .add-material-form .category-radio-group {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10pt;
+  }
+  
+  .category-radio-group label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .category-radio-group radio {
+    transform: scale(.6)
+  }
+  
+  .confirm-button {
+    width: 100%;
+    margin-top: 30rpx;
+  }
+  
+  .confirm-button button {
+    width: 100%;
+  }

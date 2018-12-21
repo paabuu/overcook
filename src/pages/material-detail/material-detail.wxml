@@ -1,0 +1,50 @@
+<wxs module="util" src="../../utils/util.wxs"></wxs>
+
+<view class="add-material-container">
+  <view class="add-material-header">
+    <image src='{{material.icon}}'></image>
+    <text>{{material.name}}{{util.isStaleDated(material.shelfLife) ? '(已过期)': ''}}</text>
+  </view>
+  <view class="add-material-form">
+    <label>种类:</label>
+    <input type='digit' disabled value="{{material.categoryName}}" data-type="cost"></input>
+  </view>
+  <view class="add-material-form">
+    <label>购入:</label>
+    <picker mode="date" disabled value="{{material.buyDate}}" data-type="shelfLife">
+      <text>{{material.buyDate}}</text>
+    </picker>
+  </view>
+  <view class="add-material-form">
+    <label>保质期:</label>
+    <picker mode="date" disabled value="{{material.shelfLife}}" data-type="shelfLife">
+      <text>{{material.shelfLife}}</text>
+    </picker>
+  </view>
+  <view class="add-material-form">
+    <label>总量:</label>
+    <input disabled value="{{material.total}}" data-type="total"></input>
+  </view>
+  <view class="add-material-form">
+    <label>花费:</label>
+    <input disabled type='digit' value="{{material.cost}}" data-type="cost"></input>
+  </view>
+  <view class="add-material-form">
+    <label>备注:</label>
+    <input data-type="remark" bindchange="changeInfo" value="{{material.remark}}"data-type="remark"></input>
+  </view>
+  <view class="add-material-form">
+    <label>剩余:</label>
+    <view class="slider">
+        <slider step="5" bindchange="changeInfo" data-type="surplus" value="{{material.surplus}}" block-size="20"></slider>
+    </view>
+  </view>
+
+  <view style="margin-top: 20rpx">
+    <button wx:if="{{material.surplus > 0}}" bindtap="use" type="primary">使用(剩余{{material.surplus}}%)</button>
+    <button wx:else bindtap="clear" type="warn">清空</button>
+  </view>
+</view>
+
+
+

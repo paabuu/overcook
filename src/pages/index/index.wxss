@@ -12,30 +12,47 @@
 }
 
 .container {
-  padding: 0 20rpx;
+  /* padding: 0 20rpx; */
+  padding-top: 20rpx;
   box-sizing: border-box;
+  background-color: #efefef;
 }
 .materials-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.material-category {
-  position: relative;
+.container-category {
+  background-color: orange;
   margin-bottom: 20rpx;
-  margin-left: 22rpx;
+  padding-top: 20rpx;
+}
+
+.container .vegetables {
+  background-image: linear-gradient(180deg, #11998e, #38ef7d)
+}
+.container .meats {
+  background-image: linear-gradient(0deg, #f85032, #e73827)
+}
+.container .others {
+  background-image: linear-gradient(180deg, #2980B9, #6DD5FA, #FFFFFF)
+}
+
+.material-category-header {
+  position: relative;
+  margin: 0 20rpx 50rpx;
   line-height: 1;
 }
 
-.material-category text {
+.material-category-header text {
   font-size: 14pt;
   line-height: 1;
-  color: #666;
+  color: #fff;
   font-weight: bold;
   margin-left: 20rpx;
 }
 
-.material-category::before {
+.material-category-header::before {
   content: '';
   display: block;
   position: absolute;
@@ -43,7 +60,27 @@
   left: 0;
   width: 8rpx;
   height: 100%;
-  background-color: #1296db;
+  background-color: #fff;
 }
 
-@import '../../common.wxss'
+@import '../../common.wxss';
+
+.materials-container .material-icon {
+  border: none!important;
+}
+
+.material-add {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 77rpx;
+  background-color: #1296db;
+  font-size: 60rpx;
+  color: #fff;
+  box-shadow: 0px 1rpx 4px #1296db;
+}

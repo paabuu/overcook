@@ -1,49 +1,17 @@
+<wxs module="util" src="../../utils/util.wxs"></wxs>
 <view wx:if="{{isEmpty}}" class="empty-text">
   <image src="/assets/icons/empty.jpeg"></image>
 </view>
 <view class="container" wx:else>
-  <view class="material-vegetables" wx:if="{{materials.vegetables.length > 0}}">
-    <view class="material-category">
-      <text>蔬菜</text>
+  <view class="container-category {{item.value}}" wx:for="{{types}}" wx:key="item.value" wx:if="{{materials[item.value].length > 0}}">
+    <view class="material-category-header">
+      <text>{{item.name}}</text>
     </view>
     <view class="materials-container">
-      <view wx:for="{{materials.vegetables}}" wx:key="{{item.icon}}" class="materials-each">
-        <view><image class="material-icon" src="{{item.icon}}"></image></view>
+      <navigator wx:for="{{materials[item.value]}}" wx:key="{{item.icon}}" class="materials-each" hover-class='selected-material' open-type='navigateTo' url='/pages/material-detail/material-detail?id={{item.id}}'>
+        <view><image class="material-icon" src="{{item.icon}}" style="background-color: {{util.isStaleDated(item.shelfLife) ? '#000' : '#fff'}}"></image></view>
         <view><text class="material-name">{{item.name}}</text></view>
-      </view>
-    </view>
-  </view>
-  <view class="material-meats" wx:if="{{materials.meats.length > 0}}">
-    <view class="material-category">
-      <text>肉类</text>
-    </view>
-    <view class="materials-container">
-      <view wx:for="{{materials.meats}}" wx:key="{{item.icon}}" class="materials-each">
-        <view><image class="material-icon" src="{{item.icon}}"></image></view>
-        <view><text class="material-name">{{item.name}}</text></view>
-      </view>
-    </view>
-  </view>
-  <view class="material-fruits" wx:if="{{materials.fruits.length > 0}}">
-    <view class="material-category">
-      <text>水果</text>
-    </view>
-    <view class="materials-container">
-      <view wx:for="{{materials.fruits}}" wx:key="{{item.icon}}" class="materials-each">
-        <view><image class="material-icon" src="{{item.icon}}"></image></view>
-        <view><text class="material-name">{{item.name}}</text></view>
-      </view>
-    </view>
-  </view>
-  <view class="material-others" wx:if="{{materials.others.length > 0}}">
-    <view class="material-category">
-      <text>其他</text>
-    </view>
-    <view class="materials-container">
-      <view wx:for="{{materials.others}}" wx:key="{{item.icon}}" class="materials-each">
-        <view><image mode="aspectFill" class="material-icon" src="{{item.icon}}"></image></view>
-        <view><text class="material-name">{{item.name}}</text></view>
-      </view>
+      </navigator>
     </view>
   </view>
 </view>

@@ -1,0 +1,7 @@
+var isStaleDated = function(surplus) {
+    return getDate(surplus) < getDate();
+};
+
+module.exports = {
+    isStaleDated: isStaleDated
+};

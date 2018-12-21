@@ -44,7 +44,8 @@ Page({
     this.setData({
       name: options.name,
       icon: `/assets/materials/${options.icon}`,
-      category: options.category
+      category: options.category,
+      categoryName: types.find(t => t.value === options.category).name
     });
   },
 
@@ -55,14 +56,20 @@ Page({
   },
   bindInfoChange: function(e) {
     const type = e.currentTarget.dataset.type;
-    this.setData({
-      [type]: e.detail.value
-    });
+    if (type === 'shelfLife') {
+      this.setData({
+        shelfLife: formatDate(new Date(e.detail.value))
+      });
+    } else {
+      this.setData({
+        [type]: e.detail.value
+      });
+    }
   },
   bindConfirm: function() {
     const materials = wx.getStorageSync('materials') || [];
-    const { name, icon, category, cost, total, remark, shelfLife } = this.data;
-    materials.push({name, icon, category, cost, total, remark, shelfLife, id: Date.now()});
+    const { name, icon, category, cost, total, remark, shelfLife, categoryName } = this.data;
+    materials.push({name, icon, category, cost, total, remark, shelfLife, categoryName, id: Date.now(), surplus: 100});
     wx.setStorage({
       key: "materials",
       data: materials,

@@ -1,8 +1,24 @@
 //index.js
 //获取应用实例
 const app = getApp();
-const materials = require('../../assets/materials/materials.js');
-const { vegetables, meats, fruits, others } = materials;
+const types = [
+  {
+    name: "蔬菜",
+    value: "vegetables"
+  },
+  {
+    name: "肉类",
+    value: "meats"
+  },
+  {
+    name: "水果",
+    value: "fruits"
+  },
+  {
+    name: "其他",
+    value: "others"
+  }
+];
 
 Page({
   data: {
@@ -16,7 +32,8 @@ Page({
       fruits: [],
       others: []
     },
-    isEmpty: false
+    isEmpty: false,
+    types
   },
   //事件处理函数
   bindViewTap: function() {
