@@ -65,7 +65,7 @@ Page({
   },
 
   changeInfo: function(e) {
-    const { type } = e.target.dataset;
+    const { type } = e.currentTarget.dataset;
     this.setData({
       material: {
         ...this.data.material,

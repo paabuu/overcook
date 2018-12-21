@@ -12,10 +12,11 @@
 }
 
 .container {
-  /* padding: 0 20rpx; */
+  padding: 0 20rpx;
   padding-top: 20rpx;
   box-sizing: border-box;
   background-color: #efefef;
+  min-height: 100vh;
 }
 .materials-container {
   display: flex;
@@ -71,8 +72,8 @@
 
 .material-add {
   position: fixed;
-  right: 30rpx;
-  bottom: 30rpx;
+  right: 20rpx;
+  bottom: 20rpx;
 
   width: 80rpx;
   height: 80rpx;

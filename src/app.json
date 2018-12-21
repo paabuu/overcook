@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/materials/materials",
     "pages/add-material/add-material",
-    "pages/material-detail/material-detail"
+    "pages/material-detail/material-detail",
+    "pages/tobuy/tobuy"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,7 +23,7 @@
       },
       {
         "text": "购物清单",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/tobuy/tobuy",
         "iconPath": "assets/icons/shopping_list.png",
         "selectedIconPath": "assets/icons/shopping_list_selected.png"
       },

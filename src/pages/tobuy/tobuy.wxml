@@ -1,0 +1,31 @@
+<!--pages/tobuy/tobuy.wxml-->
+<wxs module="clear">
+    module.exports = {
+        hasDone: function(tobuys) {
+            return tobuys.filter(function(b) { return b.done }).length > 0
+        }
+    }
+</wxs>
+<view class='tobuy-container'>
+    <view class='add-tobuy'>
+        <input 
+            value='{{tobuy}}' 
+            type="text" 
+            bindinput='bindTobuyChange'
+            placeholder='输入食材名称'
+            placeholder-class='tobuy-placeholder'
+        ></input>
+        <view class="add-tobuy-button" hover-stay-time='20' hover-class='add-tobuy-button_hover' bindtap='addTobuy'>添加</view>
+    </view>
+    <view class='checkbox-group'>
+        <checkbox-group wx:for='{{tobuys}}' data-id='{{item.id}}' wx:key='{{item.id}}' bindtap='bindToggleChecked'>
+            <label class="checkbox-group-label">
+                <checkbox value="{{item.id}}" checked="{{item.done}}" />
+                <text class="{{item.done && 'done'}}">{{item.text}}</text>
+            </label>
+        </checkbox-group>
+    </view>
+    <view class='clear' bindtap='clear' wx:if="{{clear.hasDone(tobuys)}}" >
+        <text>清除已完成</text>
+    </view>
+</view>
