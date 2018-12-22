@@ -1,0 +1,121 @@
+/* pages/recipe-detail/recipe-detail.wxss */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 20rpx;
+}
+
+.loading image {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 auto;
+    animation: rotate linear 1.5s infinite;
+}
+
+.recipe-container {
+    background-color: #fff;
+}
+
+
+.recipe-cover {
+    width: 100%;
+}
+
+.recipe-title {
+    width: 100%;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 100rpx;
+}
+
+.recipe-desc {
+    padding: 0 20rpx;
+    color: #333;
+    font-size: 12pt;
+}
+
+.recipe-ings {
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.recipe-ing-title {
+    font-size: 14pt;
+    font-weight: bold;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 20rpx;
+}
+
+.recipe-ing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+    font-size: 12pt;
+    padding: 20rpx 0;
+    color: #333;
+}
+
+.recipe-ing-name {
+    width: 70%;
+}
+.recipe-ing-unit {
+    width: 30%;
+}
+
+.recipe-steps {
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.recipe-step {
+    padding: 30rpx 0;
+    border-bottom: 1px solid #efefef;
+}
+
+.recipe-step:first-child {
+    padding-top: 0;   
+}
+
+.step-title {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.recipe-step image {
+    width: 100%;
+    margin: 30rpx 0;
+    display: block;
+}
+
+.step-text {
+    color: #333;
+    font-size: 12pt;
+}
+
+.recipe-tip {
+    margin-top: 30rpx;
+    padding: 0 20rpx 100rpx;
+    box-sizing: border-box;
+}
+
+.recipe-tip-title {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.recipe-tip-content {
+    margin-top: 30rpx;
+    color: #333;
+    font-size: 12pt;
+}

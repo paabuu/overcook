@@ -1,0 +1,1 @@
+rsync -r server root@paabuu:/root/overcook/

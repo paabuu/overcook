@@ -5,7 +5,9 @@
     "pages/materials/materials",
     "pages/add-material/add-material",
     "pages/material-detail/material-detail",
-    "pages/tobuy/tobuy"
+    "pages/tobuy/tobuy",
+    "pages/recipes/recipes",
+    "pages/recipe-detail/recipe-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,7 +31,7 @@
       },
       {
         "text": "菜谱",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/recipes/recipes",
         "iconPath": "assets/icons/cookbook.png",
         "selectedIconPath": "assets/icons/cookbook_selected.png"
       }

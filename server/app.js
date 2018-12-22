@@ -15,10 +15,9 @@ const handleResponse = (res, status, data) => {
     });
 };
 
-const getReceipesByKeyword = (res, keyword) => {
+const getReceipes = (res, url) => {
     const recipes = [];
-
-    request(`https://www.xiachufang.com/search/?keyword=${ encodeURI(keyword) }&cat=1001`, function(err, result, body) {
+    request(url, function(err, result, body) {
         if (err) {
             log.write(err);
             return;
@@ -41,6 +40,11 @@ const getReceipesByKeyword = (res, keyword) => {
 
         handleResponse(res, 200, recipes);
     });
+}
+
+const getReceipesByKeyword = (res, keyword) => {
+    const url = `https://www.xiachufang.com/search/?keyword=${ encodeURI(keyword) }&cat=1001`;
+    getReceipes(res, url);
 };
 
 app.get('/overcook/recipes/search', (req, res) => {
@@ -50,6 +54,10 @@ app.get('/overcook/recipes/search', (req, res) => {
     } else {
         getReceipesByKeyword(res, keyword);
     }
+});
+
+app.get('/overcook/recipe/popular', (req, res) => {
+    getReceipes(res, 'https://www.xiachufang.com/explore/')
 });
 
 /**
@@ -72,10 +80,11 @@ app.get('/overcook/recipe/:id', (req, res) => {
         const $ = cherrio.load(body);
         const title = $('.page-title').text().trim();
         const image = $('.recipe-show>.cover>img').attr('src');
+        $('.desc br').replaceWith('\n')
         const desc = $('.desc').text().trim().replace('<br>', '\n');
 
         const ings = [];
-        $('.ings td').each(function(i, elem) {
+        $('.ings tr').each(function(i, elem) {
             const name = $(this).find('.name').text().trim() || $(this).find('.name a').text().trim();
             const unit = $(this).find('.unit').text().trim();
             ings.push({ name, unit });
@@ -87,9 +96,10 @@ app.get('/overcook/recipe/:id', (req, res) => {
             const imgSrc = $(this).find('img').attr('src');
             steps.push({ text, imgSrc });
         });
-
-        const tip = $('.tip').text().trim().replace('<br>', '\n');
-        handleResponse(res, 200, { title, image, desc, steps, tip });
+ 
+        $('.tip br').replaceWith('\n');
+        const tip = $('.tip').text().trim();
+        handleResponse(res, 200, { title, image, desc, steps, tip, ings });
     });
 });
 

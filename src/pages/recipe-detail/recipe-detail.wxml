@@ -1,0 +1,37 @@
+<!--pages/recipe-detail/recipe-detail.wxml-->
+<view class="recipe-container">
+    <view wx:if="{{!recipe}}" class='loading'>
+        <image src="/assets/icons/loading_grey.svg"></image>
+    </view>
+    <view wx:else>
+        <image src="{{recipe.image}}" mode='aspectFill' class='recipe-cover'></image>
+        <view class='recipe-title'>
+            <text>{{recipe.title}}</text>
+        </view>
+        <view class='recipe-desc'>
+            <text>{{recipe.desc}}</text>
+        </view>
+        <view class='recipe-ings'>
+            <view class='recipe-ing-title'><text>用料</text></view>
+            <view class='recipe-ing' wx:for="{{recipe.ings}}" wx:key="{{item.name}}">
+                <view class="recipe-ing-name"><text>{{item.name}}</text></view>
+                <view class="recipe-ing-unit"><text>{{item.unit}}</text></view>
+            </view>
+        </view>
+        <view class='recipe-steps'>
+            <view class='recipe-step' wx:for="{{recipe.steps}}" wx:key="{{item.text}}">
+                <view class="step-title">
+                    <text>步骤{{index + 1}}</text>
+                </view>
+                <image src="{{item.imgSrc}}"></image>
+                <view class="step-text">
+                    <text >{{item.text}}</text>
+                </view>
+            </view>
+        </view>
+        <view class='recipe-tip' wx:if="{{recipe.tip}}">
+            <view class='recipe-tip-title'><text>小贴士</text></view>
+            <view class='recipe-tip-content'><text>{{recipe.tip}}</text></view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/recipes/recipes.wxml-->
+<view class='recipe-container'>
+    <view class='search'>
+        <input 
+            value='{{keyword}}' 
+            type="text" 
+            bindinput='bindKeywordChange'
+            placeholder="菜谱、食材"
+            placeholder-class='keyword-placeholder'
+        ></input>
+        <view class="search-button" hover-stay-time='20' hover-class='search-button_hover' bindtap='fetchRecipesByKeyword'>搜索</view>
+    </view>
+    <view wx:if='{{loading}}' class='loading'>
+        <image src="/assets/icons/loading.svg"></image>
+    </view>
+    <view wx:else class="recipe-list">
+        <navigator wx:for="{{recipes}}" wx:key="{{item.id}}" class='recipe-each' open-type='navigateTo' url="/pages/recipe-detail/recipe-detail?id={{item.id}}">
+            <image src="{{item.image}}" mode='aspectFill'></image>
+            <view class='recipe-title'><text>{{item.name}}</text></view>
+        </navigator>
+    </view>
+</view>
