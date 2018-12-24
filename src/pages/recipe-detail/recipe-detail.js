@@ -30,7 +30,7 @@ Page({
 
   getRecipeById: function(id) {
     wx.request({
-      url: `https://pabu.pub/overcook/recipe/${id}`,
+      url: `https://greatwhole90.com/overcook/recipe/${id}`,
       success: res => {
         if (res.data.meta.code == 200) {
           this.setData({

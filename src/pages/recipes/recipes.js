@@ -46,12 +46,12 @@ Page({
     if (!this.data.keyword) {
       this.fetchPopularRecipes();
     };
-    const url = `https://pabu.pub/overcook/recipes/search?keyword=${this.data.keyword}`;
+    const url = `https://greatwhole90.com/overcook/recipes/search?keyword=${this.data.keyword}`;
     this.fetchRecipes(url);
   },
 
   fetchPopularRecipes: function() {
-    const url = `https://pabu.pub/overcook/recipe/popular`;
+    const url = `https://greatwhole90.com/overcook/recipe/popular`;
     this.fetchRecipes(url);
   },
 
