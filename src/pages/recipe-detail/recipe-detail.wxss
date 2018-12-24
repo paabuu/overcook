@@ -54,6 +54,15 @@
     font-weight: bold;
     border-bottom: 1px solid #efefef;
     padding-bottom: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.longpress-add-tobuy {
+    font-size: 10pt;
+    color: #666;
+    font-weight: normal;
 }
 
 .recipe-ing {

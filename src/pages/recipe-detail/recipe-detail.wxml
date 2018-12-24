@@ -12,8 +12,11 @@
             <text>{{recipe.desc}}</text>
         </view>
         <view class='recipe-ings'>
-            <view class='recipe-ing-title'><text>用料</text></view>
-            <view class='recipe-ing' wx:for="{{recipe.ings}}" wx:key="{{item.name}}">
+            <view class='recipe-ing-title'>
+                <text>用料</text>
+                <text class='longpress-add-tobuy'>长按添加到购物清单</text>
+            </view>
+            <view class='recipe-ing' wx:for="{{recipe.ings}}" wx:key="{{item.name}}" bindlongpress='addToBuy' data-name='{{item.name}}' data-unit='{{item.unit}}'>
                 <view class="recipe-ing-name"><text>{{item.name}}</text></view>
                 <view class="recipe-ing-unit"><text>{{item.unit}}</text></view>
             </view>

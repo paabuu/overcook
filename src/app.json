@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/materials/materials",
     "pages/add-material/add-material",
     "pages/material-detail/material-detail",
@@ -30,7 +29,7 @@
         "selectedIconPath": "assets/icons/shopping_list_selected.png"
       },
       {
-        "text": "菜谱",
+        "text": "找菜谱",
         "pagePath": "pages/recipes/recipes",
         "iconPath": "assets/icons/cookbook.png",
         "selectedIconPath": "assets/icons/cookbook_selected.png"

@@ -39,5 +39,24 @@ Page({
         }
       }
     });
+  },
+  addToBuy: function(e) {
+    const { name, unit } = e.currentTarget.dataset;
+    const tobuys = wx.getStorageSync('tobuys') || [];
+    const newTobuy = {
+      text: `${name}${unit}`,
+      done: false,
+      id: Date.now()
+    };
+    tobuys.push(newTobuy);
+    wx.setStorage({
+      key: 'tobuys',
+      data: tobuys,
+      success: function() {
+        wx.showToast({
+          title: `${name}${unit}`
+        });
+      }
+    });
   }
 })
